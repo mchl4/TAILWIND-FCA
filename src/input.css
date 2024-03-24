@@ -1,0 +1,173 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container {
+    @apply max-w-[90rem] p-2 w-full mx-auto;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
+@layer components {
+    header{
+        @apply overflow-hidden px-5
+    }
+    nav {
+        @apply fixed z-10 bg-white h-screen lg:h-auto right-[-100%] lg:right-0 w-full lg:block lg:static ease-in-out duration-500 transition-all;
+    }
+
+    .nav.open {
+        @apply right-0;
+    }
+
+    nav li {
+        @apply text-center;
+    }
+
+    nav ul li {
+        @apply relative mx-[2] w-full lg:border-r-2 ;
+    }
+
+    nav ul li:last-child {
+        @apply border-0;
+    }
+
+    .faq-content h3 {
+        @apply sm/lg:~text-[1rem]/[1.2rem];
+    }
+
+  /* ------BURGER MENU------- */
+    .burger__menu {
+        @apply lg:hidden;
+    }
+
+    .burger__menu.open {
+        @apply z-50;
+    }
+
+    .burger__menu.open span {
+        @apply bg-dark;
+    }
+
+    .burger__menu span {
+        @apply w-[2.5rem] h-[.3rem] rounded-sm bg-dark block transition-all duration-700;
+    }
+
+    .burger__menu.open span:first-child {
+        @apply transform translate-y-[0px] translate-x-[17px] rotate-[30deg] transition-all w-[1.5rem] duration-700;
+    }
+
+    .burger__menu.open span:last-child {
+        @apply transform translate-y-[0px] translate-x-[17px] rotate-[-30deg] transition-all w-[1.5rem] duration-700;
+    }
+   
+}
+
+/* BANNER */
+.banner{
+    @apply text-center text-5xl font-thin my-[8rem] px-[3rem] py-[4rem] lg:text-8xl lg:font-thin text-dark/75
+}
+
+/* TABS */
+
+
+/* OPTIONS */
+.options{
+    @apply my-10
+}
+.options__wrapper{
+    @apply md:grid md:grid-cols-[1fr_2fr];
+}
+.options__nav{
+    @apply mb-[3rem]
+}
+.options__nav ul{
+    @apply text-xl flex flex-col gap-2 items-center text-center text-dark/50 md:text-3xl md:items-start;
+}
+.options__nav ul li{
+    @apply hover:text-berde hover:underline
+}
+
+.options__nav ul li.active{
+    @apply text-berde underline
+}
+.title{
+    @apply text-2xl md:text-3xl font-semibold ml-6 mb-[4rem]
+}
+.options__text{
+    @apply bg-malabo m-5 p-5
+}
+.options__text h4{
+    @apply flex flex-row justify-between lg:grid lg:grid-cols-[0fr_30fr_1fr] text-lg lg:text-2xl font-bold md:gap-2
+}
+.options__text span{
+    @apply hidden md:block
+}
+
+.options__text h4 i{
+    @apply transition-all;
+}
+.options__text h4 i.open{
+    @apply transform rotate-180 transition-all;
+}
+.options__tab{
+    @apply h-[100%];
+}
+.options__item p{
+    @apply max-h-[0rem] text-xl text-justify overflow-hidden transition-all 
+}
+.options__text p.open{
+    @apply max-h-[50rem] p-[1rem] mt-2 block transition-all;
+}
+.options__item{
+    @apply hidden transition-all
+}
+.options__item.active{
+    @apply opacity-100 block transition-all
+}
+
+/* FOOTER */
+.footer{
+    @apply bg-malabo p-5 mt-10 md:mx-auto md:px-10
+}
+.footer__mobile{
+    @apply flex flex-col gap-3 items-center py-[5rem] border-b-[.1rem] border-dark md:grid md:grid-cols-[1fr_3fr_1fr] md:gap-[5rem] md:justify-between md:items-start
+}
+
+.nav__footer{
+    @apply hidden md:flex md:flex-row md:gap-7 md:justify-center md:text-lg
+}
+.nav__footer ul li:first-child{
+    @apply font-semibold;
+}
+.footer__mobile img{
+    @apply w-[100%]
+}
+.footer__mobile ul{
+    @apply flex flex-col items-center gap-2 w-[100%] md:items-end 
+}
+
+.footer__end ul{
+    @apply flex flex-col items-center py-4 text-xl text-dark/80 md:flex md:flex-row md:justify-between
+}
+.footer__end ul i{
+    @apply text-3xl text-dark/70 
+}
+
+@layer utilities{
+    .btn {
+            @apply inline-block py-[.5rem] px-[1rem] border-transparent text-sm font-medium;
+        }
+    .btn.bg--berde-box {
+            @apply bg-berde text-light text-lg font-thin rounded-lg w-[50%] text-center md:text-center no-underline hover:bg-dilaw hover:text-light md:w-[100%];
+        }
+    .btn.bg--bleu-box {
+        @apply bg-bleu text-light text-lg font-thin rounded-lg w-[50%] text-center md:text-center no-underline hover:bg-blue-600 hover:text-light md:w-[100%];
+    }
+    .btn.bg--dilaw-box {
+        @apply bg-dilaw text-light text-lg font-thin rounded-lg w-[50%] text-center md:text-center no-underline hover:bg-dilaw hover:text-light md:w-[100%];
+    }
+    .btn.bg--berde-transparent {
+       @apply bg-transparent border-berde border-[.1rem] text-berde text-lg font-thin rounded-lg w-[50%] text-center md:text-center no-underline hover:bg-dilaw hover:text-light md:w-[100%];
+    }
+}
